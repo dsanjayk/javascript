@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Built-in Constants</title>
+</head>
+<body>
+
+
+    <script>
+
+        // Section 3.1: null
+
+        // null is used for representing the intentional absence of an object value and is a primitive value. Unlike undefined,
+        // it is not a property of the global object.
+
+        // It is equal to undefined but not identical to it.
+
+        // null == undefined; // true
+        // null === undefined; // false
+
+        // CAREFUL: The typeof null is 'object'.
+
+        // typeof null; // 'object';
+
+        // To properly check if a value is null, compare it with the strict equality operator
+
+        // var a = null;
+        // a === null; // true
+
+
+
+        // Section 3.2: Testing for NaN using isNaN
+
+        // window.isNaN()
+
+        // The global function isNaN() can be used to check if a certain value or expression evaluates to NaN.
+
+        // an array is considered NaN by isNaN() unless it only holds one element whose string representation
+        // can be converted to a valid number.
+
+        // isNaN(NaN); // true
+        // isNaN(1); // false: 1 is a number
+        // isNaN(-2e-4); // false: -2e-4 is a number (-0.0002) in scientific notation
+        // isNaN(Infinity); // false: Infinity is a number
+        // isNaN(true); // false: converted to 1, which is a number
+        // isNaN(false); // false: converted to 0, which is a number
+        // isNaN(null); // false: converted to 0, which is a number
+        // isNaN(""); // false: converted to 0, which is a number
+        // isNaN(" "); // false: converted to 0, which is a number
+        // isNaN("45.3"); // false: string representing a number, converted to 45.3
+        // isNaN("1.2e3"); // false: string representing a number, converted to 1.2e3
+        // isNaN("Infinity"); // false: string representing a number, converted to Infinity
+        // isNaN(new Date); // false: Date object, converted to milliseconds since epoch
+        // isNaN("10$"); // true : conversion fails, the dollar sign is not a digit
+        // isNaN("hello"); // true : conversion fails, no digits at all
+        // isNaN(undefined); // true : converted to NaN
+        // isNaN(); // true : converted to NaN (implicitly undefined)
+        // isNaN(function(){}); // true : conversion fails
+        // isNaN({}); // true : conversion fails
+        // isNaN([1, 2]); // true : converted to "1, 2", which can't be converted to a number
+
+
+        // // The one and only
+        // Number.isNaN(NaN); // true
+        // // Numbers
+        // Number.isNaN(1); // false
+        // Number.isNaN(-2e-4); // false
+        // Number.isNaN(Infinity); // false
+        // // Values not of type number
+        // Number.isNaN(true); // false
+        // Number.isNaN(false); // false
+        // Number.isNaN(null); // false
+        // Number.isNaN(""); // false
+        // Number.isNaN(" "); // false
+        // Number.isNaN("45.3"); // false
+        // Number.isNaN("1.2e3"); // false
+        // Number.isNaN("Infinity"); // false
+        // Number.isNaN(new Date); // false
+        // Number.isNaN("10$"); // false
+        // Number.isNaN("hello"); // false
+        // Number.isNaN(undefined); // false
+        // Number.isNaN(); // false
+        // Number.isNaN(function(){}); // false
+        // Number.isNaN({}); // false
+        // Number.isNaN([]); // false
+        // Number.isNaN([1]); // false
+        // Number.isNaN([1, 2]); // false
+        // Number.isNaN([true]); // false
+
+
+
+        // Section 3.3: NaN
+
+        // NaN stands for "Not a Number." When a mathematical function or operation in JavaScript cannot return a specific
+        // number, it returns the value NaN instead.
+
+        // It is a property of the global object
+
+        // Perhaps confusingly, NaN is still considered a number.
+        // typeof NaN; // 'number'
+
+        // Don't check for NaN using the equality operator. See isNaN instead.
+        // NaN == NaN // false
+        // NaN === NaN // false
+
+
+
+
+        // Section 3.4: undefined and null
+
+        // undefined is a global value that represents the absence of an assigned value.
+        // typeof undefined === 'undefined'
+        
+        // null is an object that indicates that a variable has been explicitly assigned "no value".
+        // typeof null === 'object'
+
+        // The following evaluate to undefined:
+
+        // A variable when it is declared but not assigned a value (i.e. defined)
+        // let foo;
+        // console.log('is undefined?', foo === undefined);
+        // // is undefined? true
+
+
+        // Accessing the value of a property that doesn't exist
+        // let foo = { a: 'a' };
+        // console.log('is undefined?', foo.b === undefined);
+        // // is undefined? true
+
+
+        // The return value of a function that doesn't return a value
+        // function foo() { return; }
+        // console.log('is undefined?', foo() === undefined);
+        // // is undefined? true
+
+
+        // The value of a function argument that is declared but has been omitted from the function call
+        // function foo(param) {
+        // console.log('is undefined?', param === undefined);
+        // }
+        // foo('a');
+        // foo();
+        // // is undefined? false
+        // // is undefined? true
+
+                
+        // undefined is also a property of the global window object.
+        // // Only in browsers
+        // console.log(window.undefined); // undefined
+        // window.hasOwnProperty('undefined'); // true
+
+
+
+        // Section 3.5: Infinity and -Infinity
+
+
+
+        // Section 3.6: Number constants
+
+
+
+        // Section 3.7: Operations that return NaN
+
+
+
+        // Section 3.8: Math library functions that return NaN
+
+
+
+    </script>
+</body>
+</html>
